@@ -1,0 +1,58 @@
+Query SQL Server (Calculate RFM group):
+SELECT 
+    b.CustomerID,
+    DATEDIFF(DAY, MAX(CONVERT(datetime, b.Purchase_Date, 101)), CAST('2022-09-01' AS DATE)) AS recency,
+    COUNT(DISTINCT b.ID) AS frequency,
+    SUM(b.GMV) AS monetary,
+    NTILE(4) OVER (ORDER BY DATEDIFF(DAY, MAX(CONVERT(datetime, b.Purchase_Date, 101)), CAST('2022-09-01' AS DATE)) DESC) AS r,
+    NTILE(4) OVER (ORDER BY COUNT(DISTINCT b.ID)) AS f,
+    NTILE(4) OVER (ORDER BY SUM(b.GMV)) AS m,
+    CONCAT(
+        NTILE(4) OVER (ORDER BY DATEDIFF(DAY, MAX(CONVERT(datetime, b.Purchase_Date, 101)), CAST('2022-09-01' AS DATE)) DESC),
+        NTILE(4) OVER (ORDER BY COUNT(DISTINCT b.ID)),
+        NTILE(4) OVER (ORDER BY SUM(b.GMV))
+    ) AS rfm,
+    CAST('2022-09-01' AS DATE) AS [Date]
+INTO Customer_RFM
+FROM Customer_Registered a
+JOIN Customer_Transaction b ON a.ID = b.CustomerID
+WHERE a.stopdate IS NULL AND b.CustomerID <> 0
+GROUP BY b.CustomerID
+--------------------------------------------------------------------------------------------------------------------------------------
+
+DAX PBI (Calculate cumulative and ratio):
+- Total Customers = COUNTROWS(Customer_RFM)
+
+- Cumulative 1 = 
+VAR CurrentGroup = SELECTEDVALUE(Customer_RFM[rfm])
+RETURN
+CALCULATE(
+    [Total Customers],
+    FILTER(
+        ALLSELECTED(Customer_RFM[rfm]),
+        [Total Customers] >= CALCULATE([Total Customers], Customer_RFM[rfm] = CurrentGroup)
+    )
+)
+
+-Cumulative Ratio 1 = DIVIDE([Cumulative Sum], CALCULATE(
+    [Total Customers],
+    ALL(Customer_RFM[rfm])
+))
+
+- Cumulative 2 = 
+VAR CurrentGroup = SELECTEDVALUE(Customer_RFM[rfm])
+VAR CurrentRevenue = CALCULATE(SUM(Customer_RFM[monetary]), Customer_RFM[rfm] = CurrentGroup)
+RETURN
+CALCULATE(
+    SUM(Customer_RFM[monetary]),
+    FILTER(
+        ALLSELECTED(Customer_RFM[rfm]),
+        CALCULATE(SUM(Customer_RFM[monetary])) >= CurrentRevenue
+    )
+)
+
+- Cumulative Ratio 2 =
+DIVIDE([Cumulative Revenue], CALCULATE(
+    SUM(Customer_RFM[monetary]),
+    ALL(Customer_RFM[rfm])
+))
