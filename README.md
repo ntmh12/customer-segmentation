@@ -1,30 +1,40 @@
 
-# 🧩 Customer Segmentation – Python & Power BI
+# 🧩 Customer Segmentation with SQL & Power BI
 
-This project focuses on analyzing customer behavior and segmenting them based on Recency, Frequency, and Monetary (RFM) values. It combines Python for data preprocessing and segmentation logic, and Power BI for data visualization and stakeholder presentation.
+This project focuses on customer segmentation using the RFM (Recency, Frequency, Monetary) model. SQL Server was used for data processing and segmentation logic, while Power BI was used to build an interactive dashboard for business analysis.
 
 ---
 
 ## 🧠 Project Objectives
 
+- Segment customers based on RFM scores
 - Identify high-value and at-risk customer groups
-- Provide actionable insights for retention and marketing strategy
-- Visualize key patterns and performance by customer group
+- Visualize distribution and cumulative contribution of customer groups
+- Support marketing and retention strategies through data insights
 
 ---
 
 ## 🛠️ Workflow Summary
 
-1. **Data Preparation**: Cleaned transaction and customer data using Python (Pandas)
-2. **RFM Segmentation**: Calculated Recency, Frequency, Monetary values
-3. **Scoring & Grouping**: Used RFM scores to segment into strategic groups
-4. **Visualization**: Built interactive dashboard using Power BI
+### 🗃️ Data Processing – SQL Server
+
+Customer transactions were processed using SQL to compute RFM values:
+
+- Recency: Days since last transaction
+- Frequency: Number of unique transactions
+- Monetary: Total GMV (Gross Merchandise Value)
+- Customers were ranked into 4 quantiles for each R, F, and M dimension using NTILE(4)
+- Final RFM score was built as a concatenated 3-digit value (e.g., 444, 321)
 
 ---
 
-## 📊 Visual Preview
+### 📊 Data Visualization – Power BI
 
-![Dashboard](visualization/Dashboard.png)
+Power BI was used to:
+
+- Visualize customer group distribution by RFM
+- Show contribution to revenue and volume by segment
+- Calculate cumulative revenue and customer ratios using DAX
 
 ---
 
@@ -32,25 +42,25 @@ This project focuses on analyzing customer behavior and segmenting them based on
 
 | File / Folder | Description |
 |---------------|-------------|
-| `customer_segmentation.ipynb` | Main analysis notebook with RFM logic |
-| `data/` | Raw and cleaned customer transaction data |
-| `visualization/Dashboard.png` | Power BI dashboard preview |
-| `visualization/` | Folder to store visuals and `.pbix` (if any) |
-| `README.md` | Project overview and documentation |
+| `Query & DAX.txt` | Contains full SQL and DAX logic |
+| `visualization/Dashboard.png` | Preview image of the Power BI dashboard |
+| `visualization/Dashboard.pbix` | Full interactive Power BI dashboard file |
+| `visualization/` | Folder containing all final visuals |
+| `README.md` | Project documentation |
 
 ---
 
-## 🧰 Technologies Used
+## 🧰 Tools & Technologies
 
-- **Python**: Pandas, NumPy, Seaborn, Matplotlib
-- **Power BI**: RFM dashboard visualization
-- **GitHub**: Collaboration and version control
+- **SQL Server**: Transaction data extraction and RFM grouping
+- **Power BI**: Data visualization and DAX modeling
+- **DAX**: Cumulative and ratio calculations
+- **GitHub**: Documentation and version control
 
 ---
 
 ## 📬 Contact
-
-📧 huong.nguyen@email.com  
-💼 [LinkedIn](https://www.linkedin.com/in/yourprofile)
+ 
+💼 [LinkedIn](https://www.linkedin.com/in/nguyen-thi-minh-huong/)
 
 ---
