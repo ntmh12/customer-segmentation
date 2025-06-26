@@ -45,7 +45,7 @@ Power BI was used to:
 | `Query & DAX.txt` | Contains full SQL and DAX logic |
 | `visualization/Dashboard.png` | Preview image of the Power BI dashboard |
 | `visualization/Dashboard.pbix` | Full interactive Power BI dashboard file |
-| `visualization/` | Folder containing all final visuals |
+| `Customer Report.pdf/` | Final report |
 | `README.md` | Project documentation |
 
 ---
