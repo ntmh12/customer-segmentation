@@ -38,7 +38,7 @@ Power BI was used to:
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Files  
 
 | File / Folder | Description |
 |---------------|-------------|
