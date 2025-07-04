@@ -42,10 +42,10 @@ Power BI was used to:
 
 | File / Folder | Description |
 |---------------|-------------|
-| `Query & DAX.txt` | Contains full SQL and DAX logic |
-| `visualization/Dashboard.png` | Preview image of the Power BI dashboard |
-| `visualization/Dashboard.pbix` | Full interactive Power BI dashboard file |
-| `Customer Report.pdf/` | Final report |
+| `[Query & DAX.txt](https://github.com/ntmh12/customer-segmentation/blob/main/Query%20%26%20DAX.txt)` | Contains full SQL and DAX logic |
+| `[visualization/Dashboard.png](https://github.com/ntmh12/customer-segmentation/blob/main/visualization/Dashboard.png)` | Preview image of the Power BI dashboard |
+| `[visualization/Dashboard.pbix](https://github.com/ntmh12/customer-segmentation/blob/main/visualization/Dashboard.pbix)` | Full interactive Power BI dashboard file |
+| `[Customer Report.pdf](https://github.com/ntmh12/customer-segmentation/blob/main/Customer%20Report.pdf)` | Final report |
 | `README.md` | Project documentation |
 
 ---
