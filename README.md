@@ -1,5 +1,5 @@
 
-# 🧩 Customer Segmentation with SQL & Power BI
+# 🧩 Customer Segmentation
 
 This project focuses on customer segmentation using the RFM (Recency, Frequency, Monetary) model. SQL Server was used for data processing and segmentation logic, while Power BI was used to build an interactive dashboard for business analysis.
 
