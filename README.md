@@ -53,14 +53,4 @@ Power BI was used to:
 ## 🧰 Tools & Technologies
 
 - **SQL Server**: Transaction data extraction and RFM grouping
-- **Power BI**: Data visualization and DAX modeling
-- **DAX**: Cumulative and ratio calculations
-- **GitHub**: Documentation and version control
-
----
-
-## 📬 Contact
- 
-💼 [LinkedIn](https://www.linkedin.com/in/nguyen-thi-minh-huong/)
-
----
+- **Power BI**: Data visualization and DAX
