@@ -72,3 +72,7 @@ Power BI was used to:
 
 - **SQL Server**: Transaction data extraction and RFM grouping
 - **Power BI**: Data visualization and DAX
+
+---
+
+**The end!**
