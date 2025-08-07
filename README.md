@@ -35,6 +35,24 @@ Power BI was used to:
 - Visualize customer group distribution by RFM
 - Show contribution to revenue and volume by segment
 - Calculate cumulative revenue and customer ratios using DAX
+---
+
+## 🗝️ Key Insights
+- Group 444 (recent, frequent, high-spending customers) is the most profitable segment, contributing nearly 22% of total revenue.
+
+- Groups 112 and 214, despite previously generating high revenue, have not made recent or frequent purchases — suggesting that the product may no longer fully meet their needs.
+
+- Around 60% of customers fall within just one-third of RFM combinations, reflecting a strong concentration of recurring behavioral patterns.
+
+- General Customers represent the largest share in both customer count and revenue (~29.4%), but exhibit price sensitivity despite frequent purchases.
+
+- VIP Customers, although only 16.5% of the base, contribute over 27% of total revenue due to high purchase frequency and transaction value.
+
+- Secondary Customers are less active but still contribute ~2.7 billion in revenue — posing a significant churn risk and should be targeted for reactivation.
+
+- Potential Customers are regular buyers with moderate-to-high order values and show clear potential to be upgraded to VIPs through incentives or loyalty programs.
+
+- The RFM segmentation reveals actionable opportunities to retain VIPs, reactivate dormant segments, and nurture price-sensitive but loyal customers for sustainable revenue growth.
 
 ---
 
